@@ -1,23 +1,6 @@
-package pages;
+package pages.US04_05_06_07Pages;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-public class AdminManagement {
+public class HilalPage {
 
 
     //Menu Button //button[.='Menu']
@@ -35,17 +18,4 @@ public class AdminManagement {
     // Contact Get All (//*[@class='nav-link'])[15]
     // Guest User (//*[@class='nav-link'])[16]
     // Logout (//*[@class='nav-link'])[17]
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
