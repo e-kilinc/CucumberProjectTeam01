@@ -8,6 +8,7 @@ import utilities.Driver;
 
 public class HomePage {
 
+
     public HomePage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
@@ -34,4 +35,17 @@ public class HomePage {
     @FindBy(xpath = "//*[.='Meet Management']")
     public WebElement menu_meet_management_tlg;
 
+
+
+    @FindBy(xpath = "//*[@class='fa fa-lock']")
+    public WebElement loginButton;
+
+    @FindBy(xpath = "//*[@id='username']")
+    public WebElement userNameBox;
+
+    @FindBy(xpath = "(//*[@type='button'])[3]")
+    public WebElement loginButtonHome;
+
+
 }
+
