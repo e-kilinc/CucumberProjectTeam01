@@ -9,8 +9,8 @@ import utilities.ReusableMethods;
 
 import java.util.List;
 
-public class ViceDeanManagementPagee {
-    public ViceDeanManagementPagee() {
+public class ViceDeanManagementPage {
+    public ViceDeanManagementPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
     @FindBy(xpath = "(//nav//button)[1]")
@@ -59,7 +59,7 @@ public class ViceDeanManagementPagee {
     public WebElement addStudentYes;
     @FindBy(xpath = "(//tbody//tr/td//span)[1]")
     public WebElement listStudentNumber;
-    public ViceDeanManagementPagee addStudent(String chooseTeacher, String name, String surname, String birdPlace, String email, String phoneNumber, String gender, String birthDay, String ssn, String userName, String fatherName, String motherName, String password) {
+    public ViceDeanManagementPage addStudent(String chooseTeacher, String name, String surname, String birdPlace, String email, String phoneNumber, String gender, String birthDay, String ssn, String userName, String fatherName, String motherName, String password) {
         Faker faker = new Faker();
         if (chooseTeacher != null) {
             Select select = new Select(addStudentChooseTeacher);
@@ -136,7 +136,7 @@ public class ViceDeanManagementPagee {
     public List<WebElement> dersListesi;
     @FindBy(xpath = "(//*[text()='›'])[2]")
     public WebElement birSonrakiSayfaButonu;
-    public ViceDeanManagementPagee addLessonNameCreditScore(String lessonname,String creditscore){
+    public ViceDeanManagementPage addLessonNameCreditScore(String lessonname, String creditscore){
         if (lessonname!=""){
             lessonName.sendKeys(lessonname);
         }

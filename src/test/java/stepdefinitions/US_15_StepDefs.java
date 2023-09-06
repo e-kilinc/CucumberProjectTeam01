@@ -4,16 +4,16 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.Keys;
 import pages.HomePage;
-import pages.ViceDeanManagementPagee;
+import pages.ViceDeanManagementPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 import static org.junit.Assert.assertTrue;
 
-public class AddStudentStepDefinition {
+public class US_15_StepDefs {
     HomePage homePage = new HomePage();
-    ViceDeanManagementPagee viceDeanManagmentPage = new ViceDeanManagementPagee();
+    ViceDeanManagementPage viceDeanManagmentPage = new ViceDeanManagementPage();
     @Then("kullanici vice dean olarak login olur")
     public void kullanici_vice_dean_olarak_login_olur() {
         homePage.getLogin(ConfigReader.getProperty("viceDeanUserName"), ConfigReader.getProperty("password"));
