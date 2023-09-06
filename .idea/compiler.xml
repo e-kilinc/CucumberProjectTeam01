@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="yeniproje" />
         <module name="CucumberProjectTeam01" />
+        <module name="Project_Team01" />
       </profile>
     </annotationProcessing>
   </component>

@@ -12,11 +12,10 @@ import org.junit.runner.RunWith;
         "junit:target/xml-report/cucumber1.xml",
         "rerun:TestOutput/failed_scenario.txt"},
 
-        features = "src/test/resources/features",
-        glue = {"java/stepDefinition"},
+        features = "src/test/resources/UIfeatures",
+        glue = {"stepdefinitions"},
         tags = "",
-        dryRun = false,
-        monochrome = true
+        dryRun = false
 )
 
 public class Runner {
