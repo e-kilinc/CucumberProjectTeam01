@@ -164,5 +164,5 @@ public class US_15_StepDefs {
     public void kullaniciAnaSayfayaGider() {
         homePage.getMainPage();
     }
-    //sa as
+    //sa as ok
 }
