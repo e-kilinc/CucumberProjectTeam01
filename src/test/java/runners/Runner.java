@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
 
         features = "src/test/resources/UIfeatures",
         glue = {"stepdefinitions"},
-        tags = "@deneme1",
+        tags = "",
         dryRun = false
 )
 
