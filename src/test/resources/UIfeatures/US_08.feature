@@ -1,4 +1,4 @@
-@all
+ @all
 Feature: US08 Vice Dean Ders Olusturabilmelidir
 
   Background: Kullanici Login islemini yapar
