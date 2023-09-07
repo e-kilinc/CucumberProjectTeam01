@@ -286,6 +286,12 @@ public class HomePage {
     @FindBy(xpath = "//*[text()='Contact Message Created Successfully']")
     public WebElement successfullyMessage_gnl;
 
+    @FindBy(xpath = "//*[@class='header_link ms-2']") public WebElement login1Y;
+    @FindBy(xpath = "//input[@id='username']") public WebElement usernameY;
+    @FindBy(xpath = "//input[@id='password']") public WebElement passwordY;
+    @FindBy(xpath = "(//button[@type='button'])[3]") public WebElement login2Y;
+
+
 
 }
 

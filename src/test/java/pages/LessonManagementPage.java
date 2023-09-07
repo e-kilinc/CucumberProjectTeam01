@@ -88,4 +88,22 @@ public class LessonManagementPage {
 
     //ders ismi history olan satirdaki istedigimiz veri icin
     //td[span[text()='History5']]/../td[3]
+
+    @FindBy(xpath = "//button[@id='controlled-tab-example-tab-lessonProgram']") public WebElement lessonProgramButtonY;
+    @FindBy(xpath = "//h5[text()='Lesson Program List']") public WebElement lessonProgramListY;
+    @FindBy(xpath = "(//td[span[text()='Cucumber101']]/../td[1])[1]") public WebElement cucumber101Y;
+    @FindBy(xpath = "(//td[span[text()='Cucumber101']]/../td[2])[1]") public WebElement cucumber101DayY;
+    @FindBy(xpath = "(//td[span[text()='Cucumber101']]/../td[3])[1]") public WebElement cucumber101StartY;
+    @FindBy(xpath = "(//td[span[text()='Cucumber101']]/../td[4])[1]") public WebElement cucumber101StopY;
+    @FindBy(xpath = "(//tbody[@class='table-group-divider'])[3]//tr//td[1]") public List<WebElement> ListY;
+    @FindBy(xpath = "(//a[@class='page-link' and @role='button'])[11]") public WebElement ilerlemeButonuY;
+    @FindBy(xpath = "(//div[@class='d-flex justify-content-start ps-5 col'])[3]") public WebElement pageSeiteY;
+    @FindBy(xpath = "//h5[text()='Lesson Program Assignment']") public WebElement lpAssignmentY;
+    @FindBy(xpath = "//input[@type='checkbox' and @id='lessonProgramId']") public WebElement lpChooseLessonY;
+    @FindBy(xpath = "//select[@class='form-select' and @id='teacherId']") public WebElement lpChooseTeacherY;
+    @FindBy(xpath = "(//button[text()='Submit'])[4]") public WebElement lpSubmitY;
+    @FindBy(xpath = "//div[text()='Lesson added to Teacher']") public WebElement lpSuccesY;
+    @FindBy(xpath = "//div[@role='alert' and @class='Toastify__toast-body']") public WebElement errorChooseTeacherY;
+    @FindBy(xpath = "//div[@role='alert']") public WebElement errorChooseLessonY;
+
 }
