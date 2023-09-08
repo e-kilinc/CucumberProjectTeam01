@@ -6,7 +6,7 @@ Feature: US_02
     Then Kullanici login butonuna tıklar
     And Kullanici Username girer
     And Kullanici Password girer
-    And Kullanici Login butonuna tiklar
+    And Kullanici Login butonuna tiklar_gnl
     And Kullanici Hi yazisinin gorundugunu dogrular
     Then Kullanici Menu butonuna tiklar
     Then Kullanici Guest User butonuna tiklar
