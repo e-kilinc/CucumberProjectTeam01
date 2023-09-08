@@ -63,7 +63,7 @@ public class US_02_StepDefs {
 
         String eklenenFakeUserName = US_01_StepDefs.fakeUsername;
 
-        int maxDenemeSayisi = 25;
+        int maxDenemeSayisi = 30;
         int guncelDenemeSayisi = 1;
         boolean sonucBulundu = false;
 
@@ -91,6 +91,7 @@ public class US_02_StepDefs {
 
     @Then("Kullanici son eklenen Guest user'i siler")
     public void kullaniciSonEklenenGuestUserISiler() {
+        eklenenFakeUserName = US_01_StepDefs.fakeUsername;
         By submitLocator = RelativeLocator.with(By.xpath("//*[@class='btn btn-danger']")).toRightOf(By.xpath("//*[text()='" + eklenenFakeUserName + "']"));
         ReusableMethods.click(Driver.getDriver().findElement(submitLocator));
 
