@@ -1,3 +1,4 @@
+@US11
 Feature: US_11 ViceDean LessonProgram management testi
 
   @vice11

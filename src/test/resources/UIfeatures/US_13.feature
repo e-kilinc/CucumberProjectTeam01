@@ -1,3 +1,4 @@
+@US13
 Feature:  US_13 Vice Dean Teacher olusturur
   Background: Kullanici login islemi yapar ve Add Teacher kismina gider
     Given kullanici "homePageUrl" sayfasina gider
@@ -6,7 +7,7 @@ Feature:  US_13 Vice Dean Teacher olusturur
     Then Teacher Mananement basligina tiklar
 
 
-  @vice13
+  @vice13_1
   Scenario Outline: Vice Dean Teacher olusturur(pozitif senaryo)
     Then Add Teacher  basliginin altinda choose Lessons'da ders secer
     Then Zorunlu alanlari doldurur; name "<name>", surname "<surname>",birth_place "<birth_place>",email "<email>", phone_number "<phone_number>",gender "<gender>", birth_day "<birth_day>",ssn "<ssn>",username "<username>",password"<password>"
@@ -19,7 +20,7 @@ Feature:  US_13 Vice Dean Teacher olusturur
       | Yas        | 01-01-1990 | Can         | yasemineri@gmail.com  | Male   | Yase  | 444 666 8767 | 434-66-7154 | Eri     | 05012123Ka |
 
 
-  @vice13_2
+  @vice13_2.01
   Scenario Outline: Zorunlu alanlari bos birakarak ögretmen ekleme
     And Sayfadaki Submit alanina gelir, butonuna tiklar
     And Zorunlu alanlar;name,surname,birth_place,email,phone_number,gender,birth_day,ssn,username,password altinda uyari yazilarinin göründügünü dogrular.
@@ -32,7 +33,7 @@ Feature:  US_13 Vice Dean Teacher olusturur
       | Yase       | 01-01-1990 | Can         | yasemineri@gmail.com   | Kunst  | 444 666 8767 | 434-66-7154| Lehr    | 05012123Ka |
 
 
-  @vice13_5
+  @vice13_2.02
   Scenario Outline: Choose Lesson Alanini bos birakarak ögretmen ekleme
     Then Zorunlu alanlari doldurur; name "<name>", surname "<surname>",birth_place "<birth_place>",email "<email>", phone_number "<phone_number>",gender "<gender>", birth_day "<birth_day>",ssn "<ssn>",username "<username>",password"<password>"
     And Sayfadaki Submit butonuna tiklar
@@ -102,7 +103,7 @@ Feature:  US_13 Vice Dean Teacher olusturur
     Then Zorunlu alanlari password haric doldurur; name "<name>", surname "<surname>",birth_place "<birth_place>",email "<email>", phone_number "<phone_number>",gender "<gender>", birth_day "<birth_day>",ssn "<ssn>",username "<username>"
     And Password alanina sekiz adet rakam girer
       |Password2|
-      |05012123   |
+      |05012123 |
     And Sayfadaki Submit butonuna tiklar
     And One lowercase uyarisinin göründügünü dogrular
     Examples:

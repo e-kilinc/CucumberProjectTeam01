@@ -54,12 +54,12 @@ public class US_11_StepDefs {
 
         for (int i = 0; i <=page; i++) {
             for (String veri : dersSütunu) {
-                if (veri.contains("Cucumber101")) {
+                if (veri.contains(Lesson)) {
                     ReusableMethods.scroll(lessonManagementPage.cucumber101Y);
-                    assertTrue(lessonManagementPage.cucumber101Y.getText().contains("Cucumber101"));
-                    assertTrue(lessonManagementPage.cucumber101DayY.getText().contains("FRIDAY"));
-                    assertTrue(lessonManagementPage.cucumber101DayY.getText().contains("00:11:00"));
-                    assertTrue(lessonManagementPage.cucumber101DayY.getText().contains("10:51:00"));
+                    assertTrue(lessonManagementPage.cucumber101Y.getText().contains(Lesson));
+                    assertTrue(lessonManagementPage.cucumber101DayY.getText().contains(Day));
+                    assertTrue(lessonManagementPage.cucumber101DayY.getText().contains(Start_Time));
+                    assertTrue(lessonManagementPage.cucumber101DayY.getText().contains(Stop_Time));
 
                     ReusableMethods.scroll(lessonManagementPage.cucumber101Y);
                     assertTrue(lessonManagementPage.cucumber101Y.isDisplayed());

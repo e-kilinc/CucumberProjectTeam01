@@ -1,3 +1,4 @@
+@US12
 Feature: US_12 ViceDean LessonProgram management testi
 
   Background: Kullanici Vice Dean olarak Login olur, LessonProgram bölümüne gelir
