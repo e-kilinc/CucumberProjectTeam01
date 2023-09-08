@@ -1,4 +1,4 @@
-@gonul
+@gonul2
 Feature: US_02
 
   Scenario: Admin Guest User List
