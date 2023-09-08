@@ -1,4 +1,4 @@
-@gonul
+
 Feature: US_03 Kullanıcılar sayfadan mesaj gönderebilmelidir (Contact)
 
   Background: US03
