@@ -103,7 +103,7 @@ Feature:  US_13 Vice Dean Teacher olusturur
     Then Zorunlu alanlari password haric doldurur; name "<name>", surname "<surname>",birth_place "<birth_place>",email "<email>", phone_number "<phone_number>",gender "<gender>", birth_day "<birth_day>",ssn "<ssn>",username "<username>"
     And Password alanina sekiz adet rakam girer
       |Password2|
-      |05012123   |
+      |05012123 |
     And Sayfadaki Submit butonuna tiklar
     And One lowercase uyarisinin göründügünü dogrular
     Examples:
