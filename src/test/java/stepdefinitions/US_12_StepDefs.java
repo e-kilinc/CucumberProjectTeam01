@@ -26,7 +26,7 @@ public class US_12_StepDefs {
     @Then("Choose Teacher alaninda bir ögretmen secer")
     public void choose_teacher_alaninda_bir_ögretmen_secer() {
         ReusableMethods.clickElementByJS(lessonManagementPage.lpChooseTeacherY);
-        ReusableMethods.ddmVisibleText(lessonManagementPage.lpChooseTeacherY, ConfigReader.getProperty("teacherUsername"));
+        ReusableMethods.ddmVisibleText(lessonManagementPage.lpChooseTeacherY, ConfigReader.getProperty("teacherUsernameY"));
         ReusableMethods.bekle(2);
     }
 
