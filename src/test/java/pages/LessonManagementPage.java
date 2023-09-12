@@ -54,7 +54,7 @@ public class LessonManagementPage {
     @FindBy(xpath = "((((//tbody)[2]//tr)[last()])//td)[1]")
     public WebElement lastRowLesson;
 
-    @FindBy(xpath = "((((//tbody)[2]//tr)[last()])//td)[2]")
+    @FindBy(xpath = "((((//tbody)[2]//tr)[last()])//td)[ ")
     public WebElement lastRowCompulsory;
 
     @FindBy(xpath = "((((//tbody)[2]//tr)[last()])//td)[3]")
@@ -83,6 +83,9 @@ public class LessonManagementPage {
 
     @FindBy(xpath = "//*[@id='stopTime']")
     public WebElement stopTime;
+
+    @FindBy(xpath = "//*[text()='Required']")
+    public WebElement requiredAlert;
 
     ////tr[td[text()='History5']]
 

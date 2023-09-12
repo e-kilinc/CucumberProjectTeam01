@@ -1,3 +1,4 @@
+@dersprogrami
 Feature: US10_Vice Dean ders programı oluşturabilmelidir
 
   Background: Kullanici login islemi yapar ve Lesson kismina gider
@@ -20,4 +21,62 @@ Feature: US10_Vice Dean ders programı oluşturabilmelidir
         | 0051AM|
       And Kullanici ders programi submit butonuna tiklar
       And Kullanici ders programinin olustugunu dogrular
+      And kullanici sayfayi kapatir
 
+  Scenario: TC02 Vice Dean Eksik Bilgi Girdigi icin Ders programi olusturamaz
+
+    And Kullanici egitim donemini secer
+    And Kullanici ders gununu secer
+    And Kullanici ders baslama saatini secer
+      | 0013AM |
+    And Kullanici ders bitis saatini secer
+      | 0053AM|
+    And Kullanici ders programi submit butonuna tiklar
+    And Kullanici hata mesaji aldigini dogrular
+    And kullanici sayfayi kapatir
+
+  Scenario: TC03 Vice Dean Eksik Bilgi Girdigi icin Ders programi olusturamaz
+
+    And Kullanici istedigi dersi secer
+    And Kullanici ders gununu secer
+    And Kullanici ders baslama saatini secer
+      | 0014AM |
+    And Kullanici ders bitis saatini secer
+      | 0054AM|
+    And Kullanici ders programi submit butonuna tiklar
+    And Kullanici hata mesaji aldigini dogrular
+    And kullanici sayfayi kapatir
+
+  Scenario: TC04 Vice Dean Eksik Bilgi Girdigi icin Ders programi olusturamaz
+
+    And Kullanici istedigi dersi secer
+    And Kullanici egitim donemini secer
+    And Kullanici ders baslama saatini secer
+      | 0015AM |
+    And Kullanici ders bitis saatini secer
+      | 0055AM|
+    And Kullanici ders programi submit butonuna tiklar
+    And Kullanici hata mesaji aldigini dogrular
+    And kullanici sayfayi kapatir
+
+  Scenario: TC05 Vice Dean Eksik Bilgi Girdigi icin Ders programi olusturamaz
+
+    And Kullanici istedigi dersi secer
+    And Kullanici egitim donemini secer
+    And Kullanici ders gununu secer
+    And Kullanici hata Required yazini gorur
+    And Kullanici ders bitis saatini secer
+      | 0055AM|
+    And Kullanici ders programi submit butonuna tiklar
+    And kullanici sayfayi kapatir
+
+  Scenario: TC06 Vice Dean Eksik Bilgi Girdigi icin Ders programi olusturamaz
+
+    And Kullanici istedigi dersi secer
+    And Kullanici egitim donemini secer
+    And Kullanici ders gununu secer
+    And Kullanici ders baslama saatini secer
+      | 0015AM |
+    And Kullanici hata Required yazini gorur
+    And Kullanici ders programi submit butonuna tiklar
+    And kullanici sayfayi kapatir

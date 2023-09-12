@@ -1,2 +1,0 @@
-file:src/test/resources/UIfeatures/US_09.feature:21
-file:src/test/resources/UIfeatures/US_10.feature:13
