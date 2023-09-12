@@ -90,4 +90,18 @@ public class US_10_StepDefs {
 
 
     }
+
+    @And("Kullanici hata mesaji aldigini dogrular")
+    public void kullaniciHataMesajiAldiginiDogrular() {
+        ReusableMethods.visibleWait(lessonManagementPage.alertMessage,5);
+        ReusableMethods.tumSayfaResmi("Hata Resmi");
+        assertTrue(lessonManagementPage.alertMessage.isDisplayed());
+    }
+
+    @And("Kullanici hata Required yazini gorur")
+    public void kullaniciHataRequiredYaziniGorur() {
+        ReusableMethods.visibleWait(lessonManagementPage.requiredAlert,5);
+        ReusableMethods.tumSayfaResmi("Required");
+        assertTrue(lessonManagementPage.requiredAlert.isDisplayed());
+    }
 }

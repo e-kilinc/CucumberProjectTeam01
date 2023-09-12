@@ -2,8 +2,14 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import utilities.Driver;
 
 public class TeacherManagementPage {
+    public TeacherManagementPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
+
     @FindBy(xpath = "//button[text()='Menu']") public WebElement menuY;
     @FindBy(xpath = "//a[text()='Teacher Management']") public WebElement teacherManageButtonY;
     @FindBy(xpath = "//*[@class=' css-13cymwt-control']") public  WebElement chooseLessonsY;

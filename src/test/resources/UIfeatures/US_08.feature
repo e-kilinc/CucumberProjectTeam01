@@ -14,7 +14,7 @@ Feature: US08 Vice Dean Ders Olusturabilmelidir
     Then Kullanici Lessons headerina tiklar
     And Kullanici Lesson Name kismini doldurur
       | lessonname  |
-      | Cucumber102 |
+      | Cucumber106 |
     And Kullanici dersin compulsory kismina tiklar
     And Kullanici Credit Score bilgilerini girer
       | creditScore  |

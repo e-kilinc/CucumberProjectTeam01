@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.locators.RelativeLocator;
 import pages.AdminManagementPage;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -16,6 +17,7 @@ public class US_02_StepDefs {
 
 
     AdminManagementPage adminManagementPage = new AdminManagementPage();
+    String eklenenFakeUserName;
 
 
     @Then("Kullanici login butonuna tıklar")
@@ -36,11 +38,6 @@ public class US_02_StepDefs {
 
     }
 
-    @And("Kullanici Login butonuna tiklar")
-    public void kullaniciLoginButonunaTiklar() {
-        adminManagementPage.loginButton_gnl.click();
-
-    }
 
     @And("Kullanici Hi yazisinin gorundugunu dogrular")
     public void kullaniciYazisininGorundugunuDogrular() {
@@ -66,7 +63,7 @@ public class US_02_StepDefs {
 
         String eklenenFakeUserName = US_01_StepDefs.fakeUsername;
 
-        int maxDenemeSayisi = 25;
+        int maxDenemeSayisi = 30;
         int guncelDenemeSayisi = 1;
         boolean sonucBulundu = false;
 
@@ -94,7 +91,9 @@ public class US_02_StepDefs {
 
     @Then("Kullanici son eklenen Guest user'i siler")
     public void kullaniciSonEklenenGuestUserISiler() {
-        ReusableMethods.click(adminManagementPage.delete_gnl);
+        eklenenFakeUserName = US_01_StepDefs.fakeUsername;
+        By submitLocator = RelativeLocator.with(By.xpath("//*[@class='btn btn-danger']")).toRightOf(By.xpath("//*[text()='" + eklenenFakeUserName + "']"));
+        ReusableMethods.click(Driver.getDriver().findElement(submitLocator));
 
     }
 
@@ -114,5 +113,10 @@ public class US_02_StepDefs {
         ReusableMethods.visibleWait(adminManagementPage.alertMessage_gnl, 5);
         Assert.assertEquals("Guest User deleted Successful", adminManagementPage.alertMessage_gnl.getText());
 
+    }
+
+    @And("Kullanici Login butonuna tiklar_gnl")
+    public void kullaniciLoginButonunaTiklar_gnl() {
+        adminManagementPage.loginButton_gnl.click();
     }
 }
