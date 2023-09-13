@@ -5,14 +5,24 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import utilities.ConfigReader;
 import utilities.Driver;
+
+import java.time.Duration;
+
+import static baseUrl.ManagementOnSchoolBaseUrl.setup;
 
 
 public class Hooks {
     @Before
     public void setUp() throws Exception {
-        System.out.println("Scenariolar calismaya basladi");
-    }
+            setup();
+            Driver.getDriver().get(ConfigReader.getProperty("homePageUrl"));
+            Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+            Driver.getDriver().manage().window().maximize();
+        }
+
+
 
     @After
     public void tearDown(Scenario scenario) throws Exception {
