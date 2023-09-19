@@ -2,18 +2,18 @@ package stepdefinitions;
 
 import com.github.javafaker.Faker;
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.But;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.TeacherManagementPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.sql.*;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static utilities.JDBCUtils.executeQuery;
 
 public class US_13_StepDefs {
     TeacherManagementPage teacherManagementPage = new TeacherManagementPage();
@@ -21,6 +21,9 @@ public class US_13_StepDefs {
     private static String fakeSsn;
     private static String fakePhoneNumber;
     private static String fakeEmail;
+    Connection connection;
+    Statement statement;
+    ResultSet resultSet;
 
     @Then("Menu butonuna tiklar")
     public void menuButonunaTiklar() {
