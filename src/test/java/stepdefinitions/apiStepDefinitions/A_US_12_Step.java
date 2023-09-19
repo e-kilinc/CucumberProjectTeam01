@@ -15,11 +15,11 @@ public class A_US_12_Step {
     LessonProgAssignPojo expectedData;
     Response response;
     ResponseLPAssignPojoY actualData;
-    Object userId;
+    //int userId;
     @Then("Ogretmene ders atamak icin API hazirligi yapilirY")
     public void ogretmeneDersAtamakIcinAPIHazirligiYapilirY() {
         spec.pathParams("first","teachers","second","chooseLesson");
-        expectedData=new LessonProgAssignPojo(Collections.singletonList("417"),"380");
+        expectedData=new LessonProgAssignPojo(Collections.singletonList("417"),"395");
     }
 
     @Then("Ogretmene post request ile ders atanirY")
@@ -32,11 +32,10 @@ public class A_US_12_Step {
     public void ögretmeneDersinAtandigiDogrulanirY() {
         String message="Lesson added to Teacher";
         String httpStatus="CREATED";
-//        userId=expectedData.getTeacherId();
-//        assertEquals(userId,actualData.getObject().getUserId());
+       // userId= Integer.parseInt(expectedData.getTeacherId());
+       // assertEquals(userId,actualData.getObject().getUserId());
         assertEquals(message,actualData.getMessage());
         assertEquals(httpStatus,actualData.getHttpStatus());
-
 
     }
     /*
