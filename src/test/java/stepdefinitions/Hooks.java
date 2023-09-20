@@ -17,20 +17,20 @@ public class Hooks {
     @Before
     public void setUp() throws Exception {
             setup();
-            Driver.getDriver().get(ConfigReader.getProperty("homePageUrl"));
-            Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-            Driver.getDriver().manage().window().maximize();
+//            Driver.getDriver().get(ConfigReader.getProperty("homePageUrl"));
+//            Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+//            Driver.getDriver().manage().window().maximize();
         }
 
 
 
     @After
     public void tearDown(Scenario scenario) throws Exception {
-        if (scenario.isFailed()) {
-            TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
-            scenario.attach(ts.getScreenshotAs(OutputType.BYTES), "image/jpeg", "scenario_" + scenario.getName());
-            //Driver.closeDriver();
-        }
+//        if (scenario.isFailed()) {
+//            TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
+//            scenario.attach(ts.getScreenshotAs(OutputType.BYTES), "image/jpeg", "scenario_" + scenario.getName());
+//            //Driver.closeDriver();
+//        }
 
 
     }

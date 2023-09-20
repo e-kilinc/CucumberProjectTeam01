@@ -12,9 +12,9 @@ import org.junit.runner.RunWith;
         "junit:target/xml-report/cucumber1.xml",
         "rerun:TestOutput/failed_scenario.txt"},
 
-        features = "src/test/resources/UIfeatures",
+        features = "src/test/resources",
         glue = {"stepdefinitions"},
-        tags = "",
+        tags = "@api3",
         dryRun = false
 )
 
