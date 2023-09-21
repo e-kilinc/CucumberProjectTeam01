@@ -23,11 +23,12 @@ public class A_US_13_Step {
     List<Integer> userIdList;
     ResponseTeachDelPojoY actualData2;
     ResponseGetTeacherByIdPojoY actualData3;
+    ResponseTeacherErrorPojoY actualData4;
     static int userId;
 
     @Given("Teacher olusturmak icin Post request hazirligi yapilirY")
     public void teacherOlusturmakIcinPostRequestHazirligiYapilirY() {
-  //Set the URL
+       //Set the URL
         spec.pathParams("first","teachers", "second","save");
     }
 
@@ -46,6 +47,7 @@ public class A_US_13_Step {
 
     @Then("Teacher bilgileri dogrulanirY")
     public void teacherBilgileriDogrulanirY() {
+        //Do assertion
        String message="Teacher saved successfully";
        String httpStatus="CREATED";
         assertEquals(200,response.statusCode());
@@ -74,6 +76,7 @@ public class A_US_13_Step {
     }
     @When("Get request ile olusturulmus Teacher bilgisine ulasilirY")
     public void getRequestIleOlusturulmusTeacherBilgisineUlasilirY() {
+        // Send the request and get the response
         spec.pathParams("first", "teachers", "second","getSavedTeacherById","third",userId);
         response=given(spec).when().get("{first}/{second}/{third}");
         actualData3=response.as(ResponseGetTeacherByIdPojoY.class);
@@ -81,6 +84,7 @@ public class A_US_13_Step {
 
     @Then("Teacher bilgileri dogrulanirGet_APIY: name {string}, surname {string},birth_place {string},email {string}, phone_number {string},gender {string}, birth_day {string},ssn {string},username {string}")
     public void teacherBilgileriDogrulanirGet_APIYNameSurnameBirth_placeEmailPhone_numberGenderBirth_daySsnUsername(String name, String surname, String birth_place, String email, String phone_number, String gender, String birth_day, String ssn, String username) {
+       //Do assertion
         String message="Teacher successfully found";
         String httpStatus="OK";
         assertEquals(birth_day,actualData3.getObject().getBirthDay());
@@ -99,6 +103,7 @@ public class A_US_13_Step {
 
     @And("Teacher silinirY")
     public void teacherSilinirY() {
+        // Send the request and get the response
         spec.pathParams("first", "teachers", "second","delete","third",userId);
         response=given(spec).when().delete("{first}/{second}/{third}");
         actualData2=response.as(ResponseTeachDelPojoY.class);
@@ -112,4 +117,35 @@ public class A_US_13_Step {
         assertEquals(httpStatus,actualData2.getHttpStatus());
     }
 
+    @Then("Gönderilecek Teacher bilgileri Gender olmadan hazirlanirY")
+    public void gönderilecekTeacherBilgileriGenderOlmadanHazirlanirY() {
+        //Set the expectedData
+        expectedData=new TeacherPostPojoY("1990-01-05","Can","elyjah.hersh@feerock.com","",false, Collections.singletonList("417"), "Aline","05012123Ka","156-666-5896","123-52-7456","Linder","Alinder");
+    }
+
+    @When("Teacher olusturmak icin eksik bilgi ile Post request gönderilirY")
+    public void teacherOlusturmakIcinEksikBilgiIlePostRequestGönderilirY() {
+        // Send the request and get the response
+        response= given(spec).body(expectedData).when().post("{first}/{second}");
+        actualData4=response.as(ResponseTeacherErrorPojoY.class);
+    }
+
+    @Then("Teacher olusturulmadigi dogrulanirY")
+    public void teacherOlusturulmadigiDogrulanirY() {
+        //Do assertion
+        assertEquals(400,actualData4.getStatusCode());
+    }
+
+    @Then("Gönderilecek Teacher bilgileri Yanlis SSN ile hazirlanirY")
+    public void gönderilecekTeacherBilgileriYanlisSSNIleHazirlanirY() {
+        //Set the expectedData
+        expectedData=new TeacherPostPojoY("1990-01-05","Can","elyjah.hersh@feerock.com","FEMALE",false, Collections.singletonList("417"), "Aline","05012123Ka","156-666-5896","123*52*7456","Linder","Alinder");
+    }
+
+
+    @Then("Gönderilecek Teacher bilgileri zayif Password ile hazirlanirY")
+    public void gönderilecekTeacherBilgileriZayifPasswordIleHazirlanirY() {
+        //Set the expectedData
+        expectedData=new TeacherPostPojoY("1990-01-05","Can","elyjah.hersh@feerock.com","FEMALE",false, Collections.singletonList("417"), "Aline","050121","156-666-5896","123-52-7456","Linder","Alinder");
+    }
 }
