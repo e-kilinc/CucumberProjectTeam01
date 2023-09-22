@@ -9,3 +9,4 @@ Feature: US_12 ViceDean LessonProgram management testi
     Then Ogretmene ders atamak icin API hazirligi yapilirY
     Then Ogretmene post request ile ders atanirY
     Then Ögretmene dersin atandigi dogrulanirY
+    And Delete request ile ders programi silinirY
