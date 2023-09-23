@@ -2,26 +2,16 @@ package pojos.lessonManagement;
 
 import java.io.Serializable;
 
-public class LessonResponsePojo implements Serializable {
-	private ObjectPojo1 object;
+public class LessonDeletePojo implements Serializable {
 	private String message;
 	private String httpStatus;
 
-	public LessonResponsePojo() {
+	public LessonDeletePojo() {
 	}
 
-	public LessonResponsePojo(ObjectPojo1 object, String message, String httpStatus) {
-		this.object = object;
+	public LessonDeletePojo(String message, String httpStatus) {
 		this.message = message;
 		this.httpStatus = httpStatus;
-	}
-
-	public void setObject(ObjectPojo1 object){
-		this.object = object;
-	}
-
-	public ObjectPojo1 getObject(){
-		return object;
 	}
 
 	public void setMessage(String message){
@@ -43,9 +33,8 @@ public class LessonResponsePojo implements Serializable {
 	@Override
  	public String toString(){
 		return 
-			"LessonResponsePojo{" + 
-			"object = '" + object + '\'' + 
-			",message = '" + message + '\'' + 
+			"LessonDeletePojo{" + 
+			"message = '" + message + '\'' + 
 			",httpStatus = '" + httpStatus + '\'' + 
 			"}";
 		}

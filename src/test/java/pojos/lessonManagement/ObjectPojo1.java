@@ -2,16 +2,16 @@ package pojos.lessonManagement;
 
 import java.io.Serializable;
 
-public class ObjectPojo implements Serializable {
+public class ObjectPojo1 implements Serializable {
 	private int lessonId;
 	private String lessonName;
 	private int creditScore;
 	private boolean compulsory;
 
-	public ObjectPojo() {
+	public ObjectPojo1() {
 	}
 
-	public ObjectPojo(int lessonId, String lessonName, int creditScore, boolean compulsory) {
+	public ObjectPojo1(int lessonId, String lessonName, int creditScore, boolean compulsory) {
 		this.lessonId = lessonId;
 		this.lessonName = lessonName;
 		this.creditScore = creditScore;
@@ -53,7 +53,7 @@ public class ObjectPojo implements Serializable {
 	@Override
  	public String toString(){
 		return 
-			"ObjectPojo{" + 
+			"ObjectPojo1{" +
 			"lessonId = '" + lessonId + '\'' + 
 			",lessonName = '" + lessonName + '\'' + 
 			",creditScore = '" + creditScore + '\'' + 

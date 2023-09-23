@@ -56,7 +56,7 @@ public class ObjectLPPojoY implements Serializable {
 	@Override
  	public String toString(){
 		return
-			"ObjectPojo{" +
+			"ObjectPojo1{" +
 			"lessonProgramId = '" + lessonProgramId + '\'' +
 			",startTime = '" + startTime + '\'' +
 			",stopTime = '" + stopTime + '\'' +

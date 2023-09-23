@@ -2,25 +2,25 @@ package pojos.lessonManagement;
 
 import java.io.Serializable;
 
-public class LessonResponsePojo implements Serializable {
-	private ObjectPojo1 object;
+public class LessonProgramPostEKPojo implements Serializable {
+	private ObjectPojoEK object;
 	private String message;
 	private String httpStatus;
 
-	public LessonResponsePojo() {
+	public LessonProgramPostEKPojo() {
 	}
 
-	public LessonResponsePojo(ObjectPojo1 object, String message, String httpStatus) {
+	public LessonProgramPostEKPojo(ObjectPojoEK object, String message, String httpStatus) {
 		this.object = object;
 		this.message = message;
 		this.httpStatus = httpStatus;
 	}
 
-	public void setObject(ObjectPojo1 object){
+	public void setObject(ObjectPojoEK object){
 		this.object = object;
 	}
 
-	public ObjectPojo1 getObject(){
+	public ObjectPojoEK getObject(){
 		return object;
 	}
 
@@ -43,7 +43,7 @@ public class LessonResponsePojo implements Serializable {
 	@Override
  	public String toString(){
 		return 
-			"LessonResponsePojo{" + 
+			"LessonProgramPostEKPojo{" +
 			"object = '" + object + '\'' + 
 			",message = '" + message + '\'' + 
 			",httpStatus = '" + httpStatus + '\'' + 
