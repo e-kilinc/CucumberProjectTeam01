@@ -1,6 +1,5 @@
 package stepdefinitions.apiStepDefinitions;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -18,7 +17,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 
-public class A_US_11_Step {
+public class A_US_11_12_Step {
     LessonProgramPostKunstPojoY expectedData;
     Response response;
     ResponseLPostPojoY actualData;
@@ -26,6 +25,8 @@ public class A_US_11_Step {
     ResponseDelPojoY actualData3;
     Object lessonIdList;
     int lessonProgramId;
+    LessonProgAssignPojo expectedData2;
+    ResponseLPAssignPojoY actualData4;
 
     @Given("Ders programina ders eklemek icin API hazirligi yapilirY")
     public void dersPrograminaDersEklemekIcinAPIHazirligiYapilirY() {
@@ -100,4 +101,50 @@ public class A_US_11_Step {
         assertEquals(message,actualData3.getMessage());
         assertEquals(httpStatus,actualData3.getHttpStatus());
     }
+
+
+    //int userId;
+    @Then("Ogretmene ders atamak icin API hazirligi yapilirY")
+    public void ogretmeneDersAtamakIcinAPIHazirligiYapilirY() {
+        spec.pathParams("first","teachers","second","chooseLesson");
+        expectedData2=new LessonProgAssignPojo(Collections.singletonList(""+lessonProgramId+""),"423");
+    }
+
+    @Then("Ogretmene post request ile ders atanirY")
+    public void ogretmenePostRequestIleDersAtanirY() {
+        response=given(spec).body(expectedData2).when().post("{first}/{second}");
+        actualData4=response.as(ResponseLPAssignPojoY.class);
+    }
+
+    @Then("Ögretmene dersin atandigi dogrulanirY")
+    public void ögretmeneDersinAtandigiDogrulanirY() {
+        String message="Lesson added to Teacher";
+        String httpStatus="CREATED";
+        // userId= Integer.parseInt(expectedData.getTeacherId());
+        // assertEquals(userId,actualData.getObject().getUserId());
+        assertEquals(message,actualData4.getMessage());
+        assertEquals(httpStatus,actualData4.getHttpStatus());
+
+    }
+    /*
+    {
+    "object": {
+        "userId": 367,
+        "username": "rosann.becker",
+        "name": "Yase",
+        "surname": "Eri",
+        "birthDay": "1990-01-01",
+        "ssn": "278-11-8934",
+        "birthPlace": "Can",
+        "phoneNumber": "620 797 4729",
+        "gender": "FEMALE",
+        "email": "fran.ortiz@gmail.com",
+        "advisorTeacher": false
+    },
+    "message": "Lesson added to Teacher",
+    "httpStatus": "CREATED"
+}
+     */
+
+
 }
